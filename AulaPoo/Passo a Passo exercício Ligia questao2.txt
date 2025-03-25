@@ -1,0 +1,33 @@
+Passo a Passo exercício Ligia questão 2:
+
+1. Criar a classe ContaBancaria
+2. Criar atributos privados String titular, double saldo, double rendaMensal na classe ContaBancaria
+3. Validar se a variável titular não está vazia, se tiver colocar o valor “não identificado”
+4. Validar se a rendaMensal é maior ou igual à dois salários mínimos, se não for maior atribua o valor de
+dois salários mínimos.
+5. Crie o método depositar(double montante), adicione o valor da variável montante na variável saldo.
+6. Crie o método sacar(double montante)
+7. verifique se o valor na variável saldo é maior que o valor passado por parâmetro se for, subraia o valor solicitado da variável saldo
+8. envie uma mensagem “saque efetuado com sucesso”, senão envie a mensagem “saldo insuficiente”.
+9. Crie o método verificarSaldo()
+10. Imprima para o usuário uma mensagem : “O saldo na conta de <<titular>> é: R$<<saldo>>”
+11. Substitua dos valores entre <<>> pelas variáveis correspondentes. 
+12. Chame sempre esse método depois dos métodos depositar() e sacar(), seja na classe de teste ou
+dentro dos métodos depois das operações realizadas.
+13. Crie uma classe (subclasse) chamada ContaPouPanca.
+14. A classe ContaPouPanca herdará da classe ContaBancaria
+15. Adicione o atributo privado taxaJuros (double) na classe ContaPouPanca.
+16. A variável taxaJuros só poderá aceitar valores entre 0.6 a 2.8. 
+17. Crie os métodos getter e setter para o atributo taxaJuros.
+18. Crie um método aplicarJuros()
+19. O método aplicarJuros() o deverá acrescentar a porcentagem da variável taxaJuros na variável saldo.
+20. Crie uma classe (subclasse) chamada ContaCorrente.
+21. A classe ContaCorrente herdará da classe ContaBancaria
+22. Adicione o atributo privado limiteEspecial (double) na classe ContaCorrente.
+23. Valide a variável limiteEspecial conforme a variável rendaMensal. O limite especial na sua conta não
+pode ultrapassar 40% do seu salário.
+24. Implemente Getterrs e Setters em todos os atributos de todas as classes.
+25. Crie uma classe Principal.
+26. Testar o programa com 3 objetos de cada classe. 
+27. Teste todos os métodos, inclusive enviando valores para que as validações sejam testadas corretamente.
+
