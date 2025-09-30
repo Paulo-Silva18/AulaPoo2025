@@ -30,5 +30,17 @@ public class PessoasBO {
     public List<Pessoas> getPessoas(){
         return pDAO.getPessoas();
     }
+    
+    public List<Pessoas> getPessoas(Pessoas p){
+        return pDAO.getPessoas(p);
+    }
+    
+    public List<Pessoas> getPessoas(String nome){
+        return pDAO.getPessoas(nome);
+    }
+    
+    public Pessoas getPessoas(int idpessoa){
+        return pDAO.getPessoas(idpessoa);
+    }
      
 }

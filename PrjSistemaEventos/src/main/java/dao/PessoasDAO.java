@@ -60,6 +60,57 @@ public class PessoasDAO {
         return p;
     }
     
+    public List<Pessoas> getPessoas(Pessoas p){
+        List<Pessoas> lstP = new ArrayList<>();
+        ResultSet rs;
+        try{
+            PreparedStatement ppStmt = conn.prepareStatement("SELECT * FROM pessoa");
+            rs = ppStmt.executeQuery();
+            while(rs.next()) {
+                lstP.add(getPessoa(rs));
+            }
+        }
+        catch(SQLException ex) {
+            ex.printStackTrace();
+        }
+        return lstP;
+    }
+    
+    public List<Pessoas> getPessoas(String nome){
+        List<Pessoas> lstP = new ArrayList<>();
+        ResultSet rs;
+        
+        try{
+            PreparedStatement ppStmt = conn.prepareStatement("SELECT * FROM pessoa WHERE nome ILIKE ?");
+            ppStmt.setString(1, nome+ "%");
+            rs = ppStmt.executeQuery();
+            while(rs.next()){
+                lstP.add(getPessoa(rs));
+            }
+            
+        }
+        catch(SQLException ex) {
+            ex.printStackTrace();
+        }
+        return lstP;
+    }   
+    
+    public Pessoas getPessoas(int idpessoa) {
+        Pessoas p = new Pessoas();
+        ResultSet rs;
+        try{
+            PreparedStatement ppStmt = conn.prepareStatement("SELECT * FROM pessoa WHERE idpessoa ", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            ppStmt.setInt(1, idpessoa);
+            rs = ppStmt.executeQuery();
+            rs.first();
+            p = getPessoa(rs);
+        }
+        catch(SQLException ex) {
+            ex.printStackTrace();
+        }
+        return p;
+    }
+    
     public List<Pessoas> getPessoas(){
         List<Pessoas> lstP = new ArrayList<>();
         ResultSet rs;
